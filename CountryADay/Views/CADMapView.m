@@ -39,6 +39,8 @@
 
 
 - (void)commonInit {
+    UIColor *blue = [UIColor colorWithRed:120.0/255 green:204.0/255 blue:246.0/255 alpha:1.0];
+    [self setBackgroundColor:blue];
 }
 
 
@@ -46,12 +48,17 @@
 // An empty implementation adversely affects performance during animation.
 - (void)drawRect:(CGRect)rect
 {
+    NSLog(@"drawing!!");
     CGContextRef context = UIGraphicsGetCurrentContext();
     
-    CGContextSetFillColorWithColor(context, [[UIColor redColor] CGColor]);
-    CGContextSetStrokeColorWithColor(context, [[UIColor whiteColor] CGColor]);
-    CGContextSetLineWidth(context, 1.0);
-    CGContextSetLineCap(context, kCGLineCapRound);
+    UIColor *lightGreen = [UIColor colorWithRed:166.0/255 green:212.0/255 blue:76.0/255 alpha:1.0];
+    UIColor *darkGreen = [UIColor colorWithRed:124.0/255 green:161.0/255 blue:50.0/255 alpha:1.0];
+    UIColor *blue = [UIColor colorWithRed:120.0/255 green:204.0/255 blue:246.0/255 alpha:1.0];
+    
+    CGContextSetFillColorWithColor(context, [[UIColor whiteColor] CGColor]);
+    CGContextSetStrokeColorWithColor(context, [blue CGColor]);
+    CGContextSetLineWidth(context, 1);
+    CGContextSetLineCap(context, kCGLineCapSquare);
     
     float mapHeight = self.bounds.size.height;
     float mapWidth = self.bounds.size.width;

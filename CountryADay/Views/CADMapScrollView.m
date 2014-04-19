@@ -14,7 +14,8 @@
 {
     self = [super initWithFrame:frame];
     if (self) {
-        
+        UIColor *blue = [UIColor colorWithRed:120.0/255 green:204.0/255 blue:246.0/255 alpha:1.0];
+        [self setBackgroundColor:blue];
     }
     return self;
 }
@@ -28,8 +29,8 @@
     // We use the width here because the orientation has not yet changed.
     float scrollerHeight = self.bounds.size.width;
     
-    NSLog(@"vc - MapH: %f", mapHeight);
-    NSLog(@"vc - SVH: %f", scrollerHeight);
+//    NSLog(@"vc - MapH: %f", mapHeight);
+//    NSLog(@"vc - SVH: %f", scrollerHeight);
     [self setMinimumZoomScale: scrollerHeight/mapHeight];
 //    [self setZoomScale:1];
 //    [self setContentSize:self.mapView];

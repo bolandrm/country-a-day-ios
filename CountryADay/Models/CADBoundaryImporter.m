@@ -20,8 +20,18 @@
 }
 
 - (NSMutableArray *)getBoundaries {
+    if (self.boundaries != NULL) {
+        NSLog(@"boundaries already loaded");
+        return self.boundaries;
+    }
+    NSLog(@"loading boundaries ...");
+    
+    NSString *dataSet = @"ne_110m_admin_0_countries";
+//    NSString *dataSet = @"TM_WORLD_BORDERS";
+//    NSString *dataSet = @"TM_WORLD_BORDERS";
+    
     NSString *resourcePath = [[NSBundle mainBundle] resourcePath];
-    NSString *shpPath = [resourcePath stringByAppendingPathComponent:@"TM_WORLD_BORDERS_SIMPL"];
+    NSString *shpPath = [resourcePath stringByAppendingPathComponent:dataSet];
 
     const char *pszPath = [shpPath cStringUsingEncoding:NSUTF8StringEncoding];
     SHPHandle shp = SHPOpen(pszPath, "rb");

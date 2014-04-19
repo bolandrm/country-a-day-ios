@@ -38,6 +38,10 @@
 		1EA1F54318FF3B6200090367 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1EA1F54218FF3B6200090367 /* SystemConfiguration.framework */; };
 		1EA1F54518FF3B7600090367 /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1EA1F54418FF3B7600090367 /* MobileCoreServices.framework */; };
 		1EB82CD71902D59D00A76079 /* CADMapScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1EB82CD61902D59D00A76079 /* CADMapScrollView.m */; };
+		1EB82CDC1903136B00A76079 /* ne_110m_admin_0_countries.dbf in Resources */ = {isa = PBXBuildFile; fileRef = 1EB82CD81903136B00A76079 /* ne_110m_admin_0_countries.dbf */; };
+		1EB82CDD1903136B00A76079 /* ne_110m_admin_0_countries.prj in Resources */ = {isa = PBXBuildFile; fileRef = 1EB82CD91903136B00A76079 /* ne_110m_admin_0_countries.prj */; };
+		1EB82CDE1903136B00A76079 /* ne_110m_admin_0_countries.shp in Resources */ = {isa = PBXBuildFile; fileRef = 1EB82CDA1903136B00A76079 /* ne_110m_admin_0_countries.shp */; };
+		1EB82CDF1903136B00A76079 /* ne_110m_admin_0_countries.shx in Resources */ = {isa = PBXBuildFile; fileRef = 1EB82CDB1903136B00A76079 /* ne_110m_admin_0_countries.shx */; };
 		ED56C198251A46C6A9A9DE18 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5F74727A2C7D4B7090B34A9A /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -94,6 +98,10 @@
 		1EA1F54418FF3B7600090367 /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
 		1EB82CD51902D59D00A76079 /* CADMapScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CADMapScrollView.h; sourceTree = "<group>"; };
 		1EB82CD61902D59D00A76079 /* CADMapScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CADMapScrollView.m; sourceTree = "<group>"; };
+		1EB82CD81903136B00A76079 /* ne_110m_admin_0_countries.dbf */ = {isa = PBXFileReference; lastKnownFileType = file; path = ne_110m_admin_0_countries.dbf; sourceTree = "<group>"; };
+		1EB82CD91903136B00A76079 /* ne_110m_admin_0_countries.prj */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = ne_110m_admin_0_countries.prj; sourceTree = "<group>"; };
+		1EB82CDA1903136B00A76079 /* ne_110m_admin_0_countries.shp */ = {isa = PBXFileReference; lastKnownFileType = file; path = ne_110m_admin_0_countries.shp; sourceTree = "<group>"; };
+		1EB82CDB1903136B00A76079 /* ne_110m_admin_0_countries.shx */ = {isa = PBXFileReference; lastKnownFileType = file; path = ne_110m_admin_0_countries.shx; sourceTree = "<group>"; };
 		5F74727A2C7D4B7090B34A9A /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		E4FD6FC0C2A84AE0B6D591A2 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -129,6 +137,10 @@
 		1E57589918FF44E200F39E13 /* shapefiles */ = {
 			isa = PBXGroup;
 			children = (
+				1EB82CD81903136B00A76079 /* ne_110m_admin_0_countries.dbf */,
+				1EB82CD91903136B00A76079 /* ne_110m_admin_0_countries.prj */,
+				1EB82CDA1903136B00A76079 /* ne_110m_admin_0_countries.shp */,
+				1EB82CDB1903136B00A76079 /* ne_110m_admin_0_countries.shx */,
 				1E5758A218FF5B7400F39E13 /* TM_WORLD_BORDERS_SIMPL.dbf */,
 				1E5758A318FF5B7400F39E13 /* TM_WORLD_BORDERS_SIMPL.prj */,
 				1E5758A418FF5B7400F39E13 /* TM_WORLD_BORDERS_SIMPL.shp */,
@@ -352,8 +364,10 @@
 			files = (
 				1E5758A618FF5B7400F39E13 /* TM_WORLD_BORDERS_SIMPL.dbf in Resources */,
 				1E5758A818FF5B7400F39E13 /* TM_WORLD_BORDERS_SIMPL.shp in Resources */,
+				1EB82CDC1903136B00A76079 /* ne_110m_admin_0_countries.dbf in Resources */,
 				1E57589E18FF44E200F39E13 /* TM_WORLD_BORDERS.dbf in Resources */,
 				1E5758A918FF5B7400F39E13 /* TM_WORLD_BORDERS_SIMPL.shx in Resources */,
+				1EB82CDD1903136B00A76079 /* ne_110m_admin_0_countries.prj in Resources */,
 				1E5758A018FF44E200F39E13 /* TM_WORLD_BORDERS.shp in Resources */,
 				1E57589F18FF44E200F39E13 /* TM_WORLD_BORDERS.prj in Resources */,
 				1E7DB3BA18FF3431005887D0 /* InfoPlist.strings in Resources */,
@@ -361,6 +375,8 @@
 				1E7DB3C218FF3431005887D0 /* Images.xcassets in Resources */,
 				1EA1F53E18FF386900090367 /* Storyboard.storyboard in Resources */,
 				1E5758A118FF44E200F39E13 /* TM_WORLD_BORDERS.shx in Resources */,
+				1EB82CDE1903136B00A76079 /* ne_110m_admin_0_countries.shp in Resources */,
+				1EB82CDF1903136B00A76079 /* ne_110m_admin_0_countries.shx in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

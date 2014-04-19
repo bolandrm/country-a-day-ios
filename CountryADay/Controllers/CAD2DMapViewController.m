@@ -23,34 +23,46 @@
     return self;
 }
 
-- (void)viewDidLoad
-{
-    [super viewDidLoad];
+- (void)loadView {
+    CGRect frame = [UIScreen mainScreen].applicationFrame;
+    CADMapScrollView *scroller = [[CADMapScrollView alloc] initWithFrame:frame];
+    scroller.maximumZoomScale = 3.0;
+    scroller.minimumZoomScale = 0.33;
+    scroller.delegate = self;
+    
+    CADMapView *mapView = [[CADMapView alloc] initWithFrame:CGRectMake(0, 0, 12*360, 12*180)];
+    
+    scroller.contentSize = mapView.bounds.size;
+    [scroller addSubview:mapView];
+    self.view = scroller;
+    
+    self.scroller = scroller;
+    self.mapView = mapView;
+    
+    [self performSelector:@selector(initialZoom) withObject:nil afterDelay:0];
 }
 
-- (void)viewDidAppear {
-//    [self.scroller setZoomScale:1.0];
+- (void)viewDidLoad {
+    [super viewDidLoad];
+//    [self.scroller setZoomScale:0.5];
+//    NSLog(@"GOT HERE");
+}
+
+- (void)initialZoom {
+        NSLog(@"GOT HERE");
+    [self.scroller setZoomScale:1.0 animated:NO];
 }
 
 - (UIView *)viewForZoomingInScrollView:(UIScrollView *)scrollView {
     return self.mapView;
 }
 
-- (void)willRotateToInterfaceOrientation:(UIInterfaceOrientation)toInterfaceOrientation duration:(NSTimeInterval)duration {
-//    [self.scroller setProperZoomScale];
+- (void)scrollViewDidEndZooming:(UIScrollView *)scrollView withView:(UIView *)view atScale:(CGFloat)scale {
+    //[self.mapView setNeedsDisplay];
 }
 
-- (void)scrollViewDidScroll:(UIScrollView *)scrollView {
-    float zoomedMapHeight = self.scroller.zoomScale * self.mapView.bounds.size.height;
-    float bottomMapViewDisplay = self.scroller.contentOffset.y + self.scroller.bounds.size.height;
-    
-    [self.scroller setContentSize:self.mapView.bounds.size];
-    if (zoomedMapHeight < bottomMapViewDisplay) {
-        NSLog(@"offset: %f", self.scroller.contentOffset.y);
-        NSLog(@"GO BACK!! content offset: %f", bottomMapViewDisplay - zoomedMapHeight);
-        
-        //[self.scroller setContentOffset:CGPointMake(self.scroller.contentOffset.x, self.scroller.contentOffset.y - bottomMapViewDisplay - zoomedMapHeight)];
-    }
+- (void)willRotateToInterfaceOrientation:(UIInterfaceOrientation)toInterfaceOrientation duration:(NSTimeInterval)duration {
+    [self.scroller setProperZoomScale];
 }
 
 - (void)didReceiveMemoryWarning

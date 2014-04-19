@@ -13,6 +13,6 @@
 @interface CAD2DMapViewController : UIViewController <UIScrollViewDelegate>
 
 @property (strong, nonatomic) IBOutlet CADMapScrollView *scroller;
-@property (weak, nonatomic) IBOutlet CADMapView *mapView;
+@property (strong, nonatomic) IBOutlet CADMapView *mapView;
 
 @end

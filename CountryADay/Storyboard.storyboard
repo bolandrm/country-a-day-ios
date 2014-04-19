@@ -39,18 +39,89 @@
             <objects>
                 <viewController id="SfY-SR-WE9" customClass="CAD2DMapViewController" sceneMemberID="viewController">
                     <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="mGS-9i-NdR"/>
-                        <viewControllerLayoutGuide type="bottom" id="2L8-DO-voX"/>
+                        <viewControllerLayoutGuide type="top" id="kde-JL-EIH"/>
+                        <viewControllerLayoutGuide type="bottom" id="5jz-Pd-oJD"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="ybF-8R-dCo" customClass="CADMapView">
+                    <scrollView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" bounces="NO" minimumZoomScale="0.75" maximumZoomScale="3" id="FX1-zL-vUX" customClass="CADMapScrollView">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                    </view>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ame-B4-BRu" customClass="CADMapView">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="1704" id="B87-US-jaV"/>
+                                    <constraint firstAttribute="height" constant="960" id="Vwr-L1-BkM"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="ame-B4-BRu" secondAttribute="trailing" id="8tR-qS-1b5"/>
+                            <constraint firstItem="5jz-Pd-oJD" firstAttribute="top" secondItem="ame-B4-BRu" secondAttribute="bottom" id="BpX-eE-tVf"/>
+                            <constraint firstItem="ame-B4-BRu" firstAttribute="top" secondItem="FX1-zL-vUX" secondAttribute="top" id="Van-vb-NNT"/>
+                            <constraint firstItem="ame-B4-BRu" firstAttribute="leading" secondItem="FX1-zL-vUX" secondAttribute="leading" id="cI2-sq-XSg"/>
+                        </constraints>
+                        <connections>
+                            <outlet property="delegate" destination="SfY-SR-WE9" id="IW2-I7-38J"/>
+                        </connections>
+                    </scrollView>
+                    <connections>
+                        <outlet property="mapView" destination="ame-B4-BRu" id="18F-lI-Ptv"/>
+                        <outlet property="scroller" destination="FX1-zL-vUX" id="h8I-B2-CdJ"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="57N-vk-bLn" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="959" y="-695"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="NYQ-Hm-KiI">
+            <objects>
+                <viewController id="kHt-Ye-nc5" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="pW2-Sz-8K1"/>
+                        <viewControllerLayoutGuide type="bottom" id="WIQ-IN-gpT"/>
+                    </layoutGuides>
+                    <scrollView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" id="CwF-kB-ymz">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="awl-PL-DRJ">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="861"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <subviews>
+                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ota-rc-YhK">
+                                        <rect key="frame" x="20" y="20" width="42" height="21"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LCU-Cy-Erg">
+                                        <rect key="frame" x="25" y="820" width="42" height="21"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="320" id="Dy7-6s-XEc"/>
+                                    <constraint firstAttribute="height" constant="861" id="tE3-qY-DQp"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <constraints>
+                            <constraint firstItem="awl-PL-DRJ" firstAttribute="top" secondItem="CwF-kB-ymz" secondAttribute="top" id="2jJ-dS-UkP"/>
+                            <constraint firstAttribute="trailing" secondItem="awl-PL-DRJ" secondAttribute="trailing" id="7Ks-Dv-K2M"/>
+                            <constraint firstItem="WIQ-IN-gpT" firstAttribute="top" secondItem="awl-PL-DRJ" secondAttribute="bottom" id="T3h-DW-dH5"/>
+                            <constraint firstItem="awl-PL-DRJ" firstAttribute="leading" secondItem="CwF-kB-ymz" secondAttribute="leading" id="TbP-mN-pPx"/>
+                        </constraints>
+                    </scrollView>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="kdb-PS-rrb" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1481" y="-663"/>
         </scene>
     </scenes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">

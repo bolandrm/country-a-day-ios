@@ -26,7 +26,31 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+}
+
+- (void)viewDidAppear {
+//    [self.scroller setZoomScale:1.0];
+}
+
+- (UIView *)viewForZoomingInScrollView:(UIScrollView *)scrollView {
+    return self.mapView;
+}
+
+- (void)willRotateToInterfaceOrientation:(UIInterfaceOrientation)toInterfaceOrientation duration:(NSTimeInterval)duration {
+//    [self.scroller setProperZoomScale];
+}
+
+- (void)scrollViewDidScroll:(UIScrollView *)scrollView {
+    float zoomedMapHeight = self.scroller.zoomScale * self.mapView.bounds.size.height;
+    float bottomMapViewDisplay = self.scroller.contentOffset.y + self.scroller.bounds.size.height;
+    
+    [self.scroller setContentSize:self.mapView.bounds.size];
+    if (zoomedMapHeight < bottomMapViewDisplay) {
+        NSLog(@"offset: %f", self.scroller.contentOffset.y);
+        NSLog(@"GO BACK!! content offset: %f", bottomMapViewDisplay - zoomedMapHeight);
+        
+        //[self.scroller setContentOffset:CGPointMake(self.scroller.contentOffset.x, self.scroller.contentOffset.y - bottomMapViewDisplay - zoomedMapHeight)];
+    }
 }
 
 - (void)didReceiveMemoryWarning

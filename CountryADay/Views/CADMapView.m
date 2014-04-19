@@ -39,7 +39,6 @@
 
 
 - (void)commonInit {
-    
 }
 
 
@@ -54,7 +53,8 @@
     CGContextSetLineWidth(context, 1.0);
     CGContextSetLineCap(context, kCGLineCapRound);
     
-    NSLog(@"Width: %f, Height: %f", self.bounds.size.width, self.bounds.size.height);
+    float mapHeight = self.bounds.size.height;
+    float mapWidth = self.bounds.size.width;
     
     self.countryBoundaries = [[CADBoundaryImporter sharedInstance] getBoundaries];
     
@@ -69,9 +69,9 @@
                 CLLocationCoordinate2D coord = [coordValue MKCoordinateValue];
                 
                 if (c == 0) {
-                    CGPathMoveToPoint(path, NULL, (coord.longitude + 180.0f) * (self.bounds.size.width / 360), self.bounds.size.height - (coord.latitude + 90.0f) * (self.bounds.size.height / 180));
+                    CGPathMoveToPoint(path, NULL, (coord.longitude + 180.0f) * (mapWidth / 360), mapHeight - (coord.latitude + 90.0f) * (mapHeight / 180));
                 } else {
-                    CGPathAddLineToPoint(path, NULL, (coord.longitude + 180.0f) * (self.bounds.size.width / 360), self.bounds.size.height - (coord.latitude + 90.0f) * (self.bounds.size.height / 180));
+                    CGPathAddLineToPoint(path, NULL, (coord.longitude + 180.0f) * (mapWidth / 360), mapHeight - (coord.latitude + 90.0f) * (mapHeight / 180));
                 }
                 
             }

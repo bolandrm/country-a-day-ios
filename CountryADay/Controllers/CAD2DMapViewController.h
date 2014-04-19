@@ -7,7 +7,12 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "CADMapView.h"
+#import "CADMapScrollView.h"
 
-@interface CAD2DMapViewController : UIViewController
+@interface CAD2DMapViewController : UIViewController <UIScrollViewDelegate>
+
+@property (strong, nonatomic) IBOutlet CADMapScrollView *scroller;
+@property (weak, nonatomic) IBOutlet CADMapView *mapView;
 
 @end
